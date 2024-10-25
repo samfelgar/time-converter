@@ -16,7 +16,7 @@ var toDecimal = &cobra.Command{
 	Args: cobra.ExactArgs(1),
 	Aliases: []string{"dec"},
 	RunE: func(cmd *cobra.Command, args []string) error {
-		exp, err := regexp.Compile(`^\d+h\d+m$`)
+		exp, err := regexp.Compile(`^\d+h\d+m(?:\d+s)?$`)
 
 		if err != nil {
 			return fmt.Errorf("invalid regex")
